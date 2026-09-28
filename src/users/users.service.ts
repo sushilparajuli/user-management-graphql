@@ -28,8 +28,9 @@ export class UsersService {
     },
   ];
   create(createUserInput: CreateUserInput) {
-    this.users.push(createUserInput);
-    return createUserInput;
+    const id = Math.floor(Math.random() * 1000);
+    this.users.push({ id, ...createUserInput });
+    return { id, ...createUserInput };
   }
 
   findAll() {

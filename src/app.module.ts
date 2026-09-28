@@ -11,7 +11,7 @@ import { UsersModule } from './users/users.module.js';
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      typePaths: ['./**/*.graphql'],
       playground: false,
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
